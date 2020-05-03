@@ -16,7 +16,19 @@ function startGame() {
     wrongGuesses = [];
 
     document.getElementById("gLeft").innerHTML = numGuesses;
-    document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" ");
-    document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
+    document.getElementById("gHistory").innerHTML = wrongGuesses.join(" ");
 
+}
+
+function letterCheck(letter) {
+    var letterRight = false;
+
+    if (chosenLetter === letter) {
+        winsCounter++;
+        numGuess--;
+    }
+    else {
+        lossCounter++;
+        numGuesses--;
+    }
 }
